@@ -1,10 +1,13 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { useState } from "react";
+import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 export function Airdrop() {
     const wallet = useWallet();
     const { connection } = useConnection();
+
     const [isSending, setIsSending] = useState(false);
+    const [amount, setAmount] = useState("");
 
     async function sendAirdropToUser() {
         if (isSending) return;
@@ -14,13 +17,24 @@ export function Airdrop() {
             return;
         }
 
+        if (!amount || Number(amount) <= 0) {
+            alert("Enter a valid amount");
+            return;
+        }
+
         try {
             setIsSending(true);
-            await connection.requestAirdrop(
+
+            const lamports = Number(amount) * LAMPORTS_PER_SOL;
+
+            const sig = await connection.requestAirdrop(
                 wallet.publicKey,
-                1_000_000_000
+                lamports
             );
-            alert("Airdropped 1 SOL");
+
+            await connection.confirmTransaction(sig, "confirmed");
+
+            alert(`Airdropped ${amount} SOL`);
         } catch (err) {
             console.error(err);
             alert("Airdrop failed");
@@ -31,7 +45,13 @@ export function Airdrop() {
 
     return (
         <div>
-            <input type="text" placeholder="Amount" />
+            <input
+                type="text"
+                placeholder="Amount in SOL"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+            />
+
             <button
                 onClick={sendAirdropToUser}
                 disabled={isSending}
