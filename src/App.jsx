@@ -19,17 +19,24 @@ function App() {
         <ConnectionProvider endpoint={"http://127.0.0.1:8899"}>
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
-                  <ShowSolBalance />
-                  <SignMessage />
-                    <WalletMultiButton />
-                    <WalletDisconnectButton />
-
-                    <div>
-                        hi there <b>hello</b>
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            gap: '20px',
+                            padding: '24px',
+                        }}
+                    >
+                        <ShowSolBalance />
+                        <SignMessage />
+                        <WalletMultiButton />
+                        <WalletDisconnectButton />
+                        <div>
+                            hi there <b>hello</b>
+                        </div>
+                        <Airdrop />
                     </div>
-
-                    <Airdrop />
-                    
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
