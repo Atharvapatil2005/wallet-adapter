@@ -1,6 +1,5 @@
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import {
-    WalletConnectButton,
     WalletDisconnectButton,
     WalletModalProvider,
     WalletMultiButton,
@@ -10,13 +9,11 @@ import { Airdrop } from "./Airdrop";
 import { ShowSolBalance } from "./ShowSolBalance";
 import { SignMessage } from "./SignMessage";
 
-// Default styles that can be overridden by your app
 import '@solana/wallet-adapter-react-ui/styles.css';
 
 function App() {
-    // create your own rpc url? Alchemy
     return (
-        <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
+        <ConnectionProvider endpoint={import.meta.env.VITE_RPC_URL}>
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
                     <div
