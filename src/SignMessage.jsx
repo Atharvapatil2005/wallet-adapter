@@ -19,58 +19,21 @@ export function SignMessage() {
     };
 
     return (
-        <div
-            style={{
-                maxWidth: '420px',
-                margin: '0 auto',
-                padding: '28px',
-                background: '#fff',
-                border: '1px solid #e5e5e5',
-                borderRadius: '12px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-            }}
-        >
-            <h2
-                style={{
-                    margin: '0 0 8px 0',
-                    fontSize: '20px',
-                    fontWeight: 600,
-                    color: '#111',
-                    textAlign: 'center',
-                }}
-            >
+        <div className="dashboard-section" style={{ alignSelf: 'stretch' }}>
+            <h2 style={{ margin: '0 0 4px 0', fontSize: '1.125rem', textAlign: 'center' }}>
                 Sign Message
             </h2>
-           
+            <p className="section-title" style={{ textAlign: 'center', marginBottom: 4 }}>
+                Prove ownership by signing a message with your wallet.
+            </p>
             <input
                 id="message"
                 type="text"
                 placeholder="Enter message to sign"
-                style={{
-                    width: '100%',
-                    padding: '12px 14px',
-                    fontSize: '14px',
-                    border: '1px solid #ddd',
-                    borderRadius: '8px',
-                    boxSizing: 'border-box',
-                    marginBottom: '16px',
-                    outline: 'none',
-                }}
+                className="dashboard-input"
+                style={{ marginBottom: 4 }}
             />
-            <button
-                onClick={onClick}
-                style={{
-                    width: '100%',
-                    padding: '12px 20px',
-                    fontSize: '14px',
-                    fontWeight: 500,
-                    border: 'none',
-                    borderRadius: '8px',
-                    background: '#1a1a1a',
-                    color: '#fff',
-                    cursor: 'pointer',
-                }}
-            >
+            <button onClick={onClick} className="btn-primary">
                 Sign Message
             </button>
         </div>

@@ -44,19 +44,21 @@ export function Airdrop() {
     }
 
     return (
-        <div>
+        <div className="dashboard-section" style={{ alignSelf: 'stretch' }}>
+            <p className="section-title">Airdrop (devnet)</p>
             <input
                 type="text"
                 placeholder="Amount in SOL"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
+                className="dashboard-input"
             />
-
             <button
                 onClick={sendAirdropToUser}
                 disabled={isSending}
+                className="btn-primary"
             >
-                {isSending ? "Sending..." : "Airdrop to Wallet"}
+                {isSending ? "Sending…" : "Airdrop to Wallet"}
             </button>
         </div>
     );

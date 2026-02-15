@@ -19,9 +19,11 @@ export function ShowSolBalance() {
     }, [wallet.publicKey, connection]);
 
     return (
-        <div>
-            <p>SOL Balance:</p>
-            <div>{balance !== null ? balance : "Connect wallet to View balance"}</div>
+        <div className="dashboard-section" style={{ alignSelf: 'stretch' }}>
+            <p className="section-title">SOL Balance</p>
+            <div className="section-value">
+                {balance !== null ? `${balance} SOL` : "Connect wallet to view balance"}
+            </div>
         </div>
     );
 }

@@ -20,11 +20,26 @@ export function SendTokens() {
         alert("Sent " + amount + " SOL to " + to);
     }
 
-    return <div>
-        <input id="to" type="text" placeholder="To" />
-        <input id="amount" type="text" placeholder="Amount" />
-        <button onClick={sendTokens}>Send</button>
-    </div>
+    return (
+        <div className="dashboard-section" style={{ alignSelf: 'stretch' }}>
+            <p className="section-title">Send SOL</p>
+            <input
+                id="to"
+                type="text"
+                placeholder="Recipient address"
+                className="dashboard-input"
+            />
+            <input
+                id="amount"
+                type="text"
+                placeholder="Amount (SOL)"
+                className="dashboard-input"
+            />
+            <button onClick={sendTokens} className="btn-primary">
+                Send
+            </button>
+        </div>
+    );
 }
 
 export default SendTokens;

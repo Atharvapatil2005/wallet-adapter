@@ -22,15 +22,23 @@ function App() {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            gap: '20px',
-                            padding: '24px',
+                            gap: '28px',
+                            padding: '32px 40px',
+                            maxWidth: '440px',
+                            width: '100%',
+                            background: 'var(--card-bg)',
+                            backdropFilter: 'blur(20px)',
+                            WebkitBackdropFilter: 'blur(20px)',
+                            border: '1px solid var(--card-border)',
+                            borderRadius: '16px',
+                            boxShadow: 'var(--card-shadow)',
+                            transition: 'box-shadow 0.2s ease',
                         }}
                     >
                         <ShowSolBalance />
-                        <SignMessage />
                         <WalletMultiButton />
                         <WalletDisconnectButton />
-                        
+                        <SignMessage />
                         <Airdrop />
                         <SendTokens />
                     </div>
