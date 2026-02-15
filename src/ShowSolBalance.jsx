@@ -21,7 +21,7 @@ export function ShowSolBalance() {
     return (
         <div>
             <p>SOL Balance:</p>
-            <div>{balance !== null ? balance : "—"}</div>
+            <div>{balance !== null ? balance : "Connect wallet to View balance"}</div>
         </div>
     );
 }

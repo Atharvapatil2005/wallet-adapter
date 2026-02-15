@@ -41,17 +41,7 @@ export function SignMessage() {
             >
                 Sign Message
             </h2>
-            <p
-                style={{
-                    margin: '0 0 24px 0',
-                    fontSize: '13px',
-                    color: '#666',
-                    textAlign: 'center',
-                    lineHeight: 1.4,
-                }}
-            >
-                Sign a message with your wallet to prove ownership.
-            </p>
+           
             <input
                 id="message"
                 type="text"

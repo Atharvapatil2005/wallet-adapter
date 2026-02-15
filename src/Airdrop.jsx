@@ -56,7 +56,7 @@ export function Airdrop() {
                 onClick={sendAirdropToUser}
                 disabled={isSending}
             >
-                {isSending ? "Sending..." : "Send Airdrop"}
+                {isSending ? "Sending..." : "Airdrop to Wallet"}
             </button>
         </div>
     );

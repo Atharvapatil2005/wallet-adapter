@@ -8,12 +8,13 @@ import {
 import { Airdrop } from "./Airdrop";
 import { ShowSolBalance } from "./ShowSolBalance";
 import { SignMessage } from "./SignMessage";
+import  { SendTokens } from "./SendTokens";
 
 import '@solana/wallet-adapter-react-ui/styles.css';
 
 function App() {
     return (
-        <ConnectionProvider endpoint={import.meta.env.VITE_RPC_URL}>
+        <ConnectionProvider endpoint="https://api.devnet.solana.com">
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
                     <div
@@ -29,10 +30,9 @@ function App() {
                         <SignMessage />
                         <WalletMultiButton />
                         <WalletDisconnectButton />
-                        <div>
-                            hi there <b>hello</b>
-                        </div>
+                        
                         <Airdrop />
+                        <SendTokens />
                     </div>
                 </WalletModalProvider>
             </WalletProvider>
