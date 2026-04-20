@@ -98,6 +98,12 @@ function AppContent() {
 
             {!wallet.publicKey && (
                 <div className="empty-state">
+                    <div className="empty-state-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                            <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                            <path d="M9 12h6"/>
+                        </svg>
+                    </div>
                     <p>Connect your wallet to access all features</p>
                 </div>
             )}
