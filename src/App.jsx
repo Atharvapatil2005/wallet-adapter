@@ -17,26 +17,16 @@ function AppContent() {
     const wallet = useWallet();
 
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '24px',
-                padding: '32px 40px',
-                maxWidth: '440px',
-                width: '100%',
-                background: 'var(--card-bg)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                border: '1px solid var(--card-border)',
-                borderRadius: '16px',
-                boxShadow: 'var(--card-shadow)',
-                transition: 'box-shadow 0.2s ease',
-            }}
+        <div className="main-card"
         >
             <div className="app-header">
-                <h1 style={{ margin: 0, fontSize: '1.5rem' }}>Solana Wallet</h1>
+                <div className="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                        <path d="M12 6v12M6 12h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                </div>
+                <h1>Solana Wallet</h1>
                 <span className="network-badge">Devnet</span>
             </div>
 
