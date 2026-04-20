@@ -38,16 +38,14 @@ export function ShowSolBalance() {
 
     return (
         <div className="dashboard-section" style={{ alignSelf: 'stretch' }}>
-            <p className="section-title">SOL Balance</p>
-            <div className={`section-value ${loading ? 'loading-skeleton' : ''}`}>
+            <div className="balance-display">
                 {loading ? (
                     <span className="skeleton-text" />
                 ) : balance !== null ? (
-                    `${balance} SOL`
-                ) : (
-                    "Connect wallet to view balance"
-                )}
+                    <span className="balance-amount">{balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 })}</span>
+                ) : null}
             </div>
+            <p className="section-title">{balance !== null ? "SOL Balance" : "Connect wallet to view balance"}</p>
         </div>
     );
 }
